@@ -1,0 +1,18 @@
+CREATE DATABASE  IF NOT EXISTS `bookrecord`;
+USE `bookrecord`;
+
+SET FOREIGN_KEY_CHECKS=0; DROP TABLE reader; SET FOREIGN_KEY_CHECKS=1;
+
+CREATE TABLE `reader` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `reader_name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `book`;
+
+CREATE TABLE `book` (
+  `reader_id` int(11) NOT NULL,
+  `book_name` varchar(45) DEFAULT NULL,
+  `author` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
